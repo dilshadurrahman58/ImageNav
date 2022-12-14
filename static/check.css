@@ -1,0 +1,32 @@
+.parent {
+    margin: 1rem;
+    padding: 3rem 3rem;
+    text-align: center;
+  }
+.child {
+    display: inline-block;
+    padding: 3rem 3rem;
+    vertical-align: middle;
+  }
+
+/* .frame {
+  position: fixed;
+}
+
+.back_button{
+  margin-right: 50px;
+  background-color: green;
+}
+
+.forward_button{
+  margin-left: 50px;
+  background-color: green;
+} */
+
+button{
+  background-color: yellow;
+}
+
+p {
+  margin:0
+}
