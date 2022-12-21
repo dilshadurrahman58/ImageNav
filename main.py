@@ -61,10 +61,12 @@ def show_image():
 		# start = (data_len - 3)
 		# end = (data_len - 1)
 		start = 1
-		end = 3
+		end = 4
 		counter = data_received[start: end]
 		if (counter[1] == ','):
 			counter = counter[0]
+		if (counter[2] == ','):
+			counter = counter[0:2]
 		counter = int(counter)
 		print("Counter: ", counter)
 		return render_template('show.html', list_of_images=json.dumps(file_names), counter=counter)
