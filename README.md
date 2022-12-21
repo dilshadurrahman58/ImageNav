@@ -10,5 +10,5 @@ Steps to run ImageNav:
   - export FLASK_ENV=development
   - flask run
 - then go to the link you get from running those three commands
-- Flask usually use port 5000
+- Flask by default (if not specified) use port 5000
 
