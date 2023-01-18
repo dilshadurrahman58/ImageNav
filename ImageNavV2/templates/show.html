@@ -1,0 +1,202 @@
+<!doctype html>
+<title>Image Navigator</title>
+
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />    
+  <link rel = "stylesheet" type="text/css" href="{{ url_for('static', filename='check.css') }}" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+        <div class='parent' width="1200" height="700">
+          <div class='child'>
+                <div class='frame' width="750" height="700">
+                    <image width="650" height="500" src="" id="myimg"></image>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <button class='back_button' style="margin-left: 10px; background-color: rgb(223, 233, 234);" onclick="action(2)" type="button">Backward</button> 
+                    <button class='forward_button' style="margin-left: 60px; background-color: rgb(223, 233, 234);" onclick="action(1)" type="button">Forward</button>
+                </div>  
+          </div>
+          <div width="200" height="500" class='child' style= "background-color: antiquewhite;">
+            <div style="text-align: left;">
+              <form>
+                <div style="float:left; margin-right: 20px;">
+                  <p style="font-size: larger;"><b>Chart Type</b></p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="bar chart" name="mycheckbox">Bar Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="line chart" name="mycheckbox">Line Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="scatterplot" name="mycheckbox">Scatterplot </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="pie chart" name="mycheckbox">Pie Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="gantt chart" name="mycheckbox">Gantt Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="histogram" name="mycheckbox">Histogram </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="area chart" name="mycheckbox">Area Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="map" name="mycheckbox">Map </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="bubble chart" name="mycheckbox">Bubble Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="graph" name="mycheckbox">Graph </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="treemap" name="mycheckbox">Treemap </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="density map" name="mycheckbox">Density Map </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="doughnut chart" name="mycheckbox">Doughnut Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="radar chart" name="mycheckbox">Radar Chart </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="dashboard" name="mycheckbox">Dashboard </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="other" name="mycheckbox">Other </p>
+
+                </div>
+                <div style="float:left;">
+                  <p style="font-size: larger;"><b>Annotation Type</b></p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="no annotation" name="mycheckbox">No Annotation </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="need discussion" name="mycheckbox">Need Discussion </p>
+                  <p style="font-size: larger;"><input type="checkbox" style="margin-right: .5rem;" value="undetermined" name="mycheckbox">Undetermined </p>
+                  <div style="font-size: larger;"><input type="checkbox" value="trend-class1"> Trend-1  <input type="checkbox" value="trend-class2"> Trend-2  <input type="checkbox" value="trend-class3"> Trend-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="connector-class1"> Connector-1  <input type="checkbox" value="connector-class2"> Connector-2  <input type="checkbox" value="connector-class3"> Connector-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="enclosure-class1"> Enclosure-1  <input type="checkbox" value="enclosure-class2"> Enclosure-2  <input type="checkbox" value="enclosure-class3"> Enclosure-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="text-class1"> Text-1  <input type="checkbox" value="text-class2"> Text-2  <input type="checkbox" value="text-class3"> Text-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="mark-class1"> Mark-1  <input type="checkbox" value="mark-class2"> Mark-2  <input type="checkbox" value="mark-class3"> Mark-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="color-class1"> Color-1  <input type="checkbox" value="color-class2"> Color-2  <input type="checkbox" value="color-class3"> Color-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="geometric-class1"> Geometric-1  <input type="checkbox" value="geometric-class2"> Geometric-2  <input type="checkbox" value="geometric-class3"> Geometric-3</div>
+                  <div style="font-size: larger;"><input type="checkbox" value="other-class1"> Other-1  <input type="checkbox" value="other-class2"> Other-2  <input type="checkbox" value="other-class3"> Other-3</div>
+                </div>
+                <div style="clear:both;">&nbsp;</div>
+                <button style="background-color: rgb(223, 233, 234); margin-left: 100px; width: 100px;" onclick="submit_form()">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <script>
+
+            console.log("DEBUG: I am inside the script");
+            var counter = {{counter}};
+            console.log("DEBUG: INSIDE show.html: The counter value is: ", counter);
+            var array_of_images = {{list_of_images | tojson}};
+            array_of_images  = array_of_images.slice(1, -1);
+            array_of_images  = array_of_images.split(",");
+            len_image_array = array_of_images.length;
+
+
+            var charts = ["bar chart", "line chart", "scatterplot", "pie chart", "gantt chart", "histogram", "area chart", "map", "bubble chart",
+                   "graph", "treemap", "density map", "density map", "doughnut chart", "radar chart", "dashboard", "other"];
+            var annotations = ["no annotation", "need discussion", "undetermined", "connector-class1", "connector-class2", "connector-class3", 
+            "enclosure-class1", "enclosure-class2", "enclosure-class3", "text-class1", "text-class2", "text-class3", "mark-class1", "mark-class2", "mark-class3", 
+            "color-class1", "color-class2", "color-class3", "geometric-class1", "geometric-class2", "geometric-class3", "other-class1", "other-class2", "other-class3"];
+    
+            // console.log(array_of_images);
+            // console.log("DEBUG: The length of the array is: ", len_imageArray);
+
+            //first loads the initial image in the /static/uploads folder and then go left and right according to the actions
+
+            //initial image
+            if (counter == 0)
+            {
+              current_image = array_of_images[counter].slice(1, -1);
+              console.log("FFirst Image: ", current_image);
+            }
+            else{
+              current_image = array_of_images[counter].slice(2, -1);
+              console.log("First Image: ", current_image);
+            }
+            // console.log("DEBUG: The first image = ", firstImage);
+            document.getElementById("myimg").setAttribute("src", "/static/uploads/"+ current_image);
+            // console.log("DEBUG: Outside action = ", counter);
+            
+            //implementation of forward and backward actions
+            function action(ac){
+                //go forward
+                if (ac == 1){
+                    // console.log("DEBUG: I am inside the FORWARD function");
+                    //edge case handling
+                    if(counter == len_image_array - 1){
+                      window.alert("There is no more images at the right");
+                      counter--;
+                    }
+                    counter++;
+                    // slice(2, -1) because of the whitespace between the filenames in the json file
+                    current_image = array_of_images[counter].slice(2, -1);
+                    current_image = current_image.trim();
+                    
+                    // console.log("DEBUG: Forward = ", forward_image);
+                    document.getElementById("myimg").setAttribute("src", "/static/uploads/"+ current_image);
+                    // console.log("DEBUG: Forward = ", counter);
+                }
+                //go backward
+                if (ac == 2){
+                    console.log("DEBUG: I am inside the BACKWARD function");
+                    //edge case handling
+                    if(counter == 0){
+                      window.alert("There is no more images at the left");
+                      counter++;
+                    }
+                    counter--;
+                    // console.log("DEBUG: The name of the image is: ", array_of_images[counter]);
+                    // slice(2, -1) because of the whitespace between the filenames in the json file
+                    if (counter == 0){
+                      // console.log("DEBUG: Hey! Why am I not printing?");
+                      current_image = array_of_images[counter].slice(1, -1);
+                    }
+                    else{
+                      current_image = array_of_images[counter].slice(2, -1);
+                    }
+                    // console.log("DEBUG: Backward = ", backward_image);
+                    document.getElementById("myimg").setAttribute("src", "/static/uploads/"+ current_image);
+                    // console.log("DEBUG: Backward = ", counter);
+
+                }
+
+            }
+
+            function submit_form() {
+              console.log("DEBUG: I am inside the submitForm function");
+            
+              // Select all the checkbox elements in the form
+              const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+              // Create an array to store the checked values
+              var chart_type; 
+              var annotation_to_class = [];
+              
+              // Loop through the checkboxes and get the checked values
+              checkboxes.forEach(checkbox => {
+                if(charts.find(element => element == checkbox.value)){
+                  chart_type = checkbox.value;
+                }
+                if(annotations.find(element => element == checkbox.value)){
+                  annotation_to_class.push(checkbox.value);
+                }
+                
+              });
+
+              //create a json object to send to the server
+              var obj = {};
+              obj["counter"] = counter;
+              obj["name"] = current_image;
+              obj["chart_type"] = chart_type;
+              obj["annotation_to_class"] = annotation_to_class;
+
+             //send the json object to the server
+              $.ajax({
+                type: "POST",
+                url: "/show_image",
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                  console.log("DEBUG: I am inside the success function");
+                  console.log("DEBUG: The data is: ", data);
+                  // window.location.href = "/submit";
+                },
+                failure: function(errMsg) {
+                  console.log("DEBUG: I am inside the failure function");
+                  console.log("DEBUG: The error is: ", errMsg);
+                }
+              });
+            }
+
+
+    
+
+
+        </script>
+
+  </body>
+</html>

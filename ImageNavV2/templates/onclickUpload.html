@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Image Navigator</title>
+
+<html lang="en">
+<head>
+    <link rel = "stylesheet" type="text/css" href="{{ url_for('static', filename='onclickUpload.css') }}" />
+</head>
+
+
+<body>
+	<div class="display" width="70%" style="margin: auto; width: 70%; background-color: antiquewhite; padding: 20px;">
+		<!-- <h2>Select images to upload </h2>
+		<p>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+				<ul class=flashes>
+				{% for message in messages %}
+				  <li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			  {% endif %}
+			{% endwith %}
+		</p> -->
+		
+		<!-- <form method="post" action="/" enctype="multipart/form-data">
+			<dl>
+				<p>
+					<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+				</p>
+			</dl>
+			<p>
+				<input type="submit" value="Submit">
+			</p>
+		</form> -->
+		
+		<br>
+		<p style="color:blue;"> Images uploaded successfully </p>
+		
+		<p><a href=show_image><button>Display Images</button></a></p>
+	</div>
+			
+</body>
+
+
