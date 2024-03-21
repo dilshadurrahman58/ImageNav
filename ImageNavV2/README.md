@@ -1,5 +1,5 @@
 # ImageNav
-This is a small web tool for navigating images and collecting data
+This is a web tool for navigating annotated charts and coding annotations
 
 Steps to run ImageNav:
 
